@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController, NavParams} from 'ionic-angular';
+import {NavController, NavParams, AlertController} from 'ionic-angular';
 
 @Component({
   selector: 'page-item-details',
@@ -8,8 +8,27 @@ import {NavController, NavParams} from 'ionic-angular';
 export class ItemDetailsPage {
   selectedItem: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
   }
+
+  onRemove() {
+    let alert = this.alertCtrl.create({
+      title: 'Suppression',
+      message: 'Etes-vous sûr de vouloir le supprimer ?',
+      buttons: [
+        {
+          text: 'Valider',
+          handler: () => {
+          //  rm le truc
+          }
+        },
+        {text: 'Annuler'}
+      ]
+
+    });
+    alert.present();
+  }
+
 }

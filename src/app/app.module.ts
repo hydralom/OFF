@@ -3,7 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
 import {MyApp} from './app.component';
 
-import {ContactPage} from '../pages/contact/contact';
+import {AddProduitPage} from '../pages/addProduit/addProduit';
 import {RecherchePage} from '../pages/recherche/recherche';
 import {ItemDetailsPage} from '../pages/item-details/item-details';
 import {TabsPage} from '../pages/tabs/tabs';
@@ -18,7 +18,7 @@ import {StatsPage} from "../pages/stats/stats";
     StatsPage,
     RecherchePage,
     ItemDetailsPage,
-    ContactPage,
+    AddProduitPage,
     TabsPage
   ],
   imports: [
@@ -29,7 +29,7 @@ import {StatsPage} from "../pages/stats/stats";
   entryComponents: [
     MyApp,
     StatsPage,
-    ContactPage,
+    AddProduitPage,
     RecherchePage,
     ItemDetailsPage,
     TabsPage

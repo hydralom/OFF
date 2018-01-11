@@ -1,0 +1,40 @@
+<ion-header xmlns="http://www.w3.org/1999/html">
+  <ion-navbar>
+    <ion-title>
+      Contact
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form>
+    <ion-item>
+      <ion-label>Nom du produit</ion-label>
+      <ion-input type="text" name="" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Marque</ion-label>
+      <ion-input type="text" name=""></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Pays d'origine</ion-label>
+      <ion-input type="text" name=""></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Quantité</ion-label>
+      <ion-input type="text" name=""></ion-input>
+    </ion-item>
+
+    <button ion-button type="button" (click)="addIngredients()">Ingrédients</button>
+    <button ion-button type="button" (click)="addAdditifs()">Additifs</button>
+
+    <ion-row>
+      <ion-col width-50 style="text-align: right">
+        <button ion-button type="submit" color="secondary">Valider</button>
+      </ion-col>
+      <ion-col width-50 style="text-align: left">
+        <button ion-button type="reset" color="danger">Annuler</button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

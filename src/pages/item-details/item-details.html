@@ -7,15 +7,11 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
   <ion-title text-center>{{selectedItem.title}}</ion-title>
-
-  <!--<h4 text-center *ngIf="selectedItem">-->
-  <!--You navigated here from <b>{{selectedItem.title}}</b>-->
-  <!--</h4>-->
 
   <ion-row>
     <button ion-button>Modifier</button>
-    <button ion-button color="danger">Supprimer</button>
+    <button ion-button color="danger" (click)="onRemove()">Supprimer</button>
   </ion-row>
 </ion-content>
