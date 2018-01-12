@@ -26,7 +26,14 @@
     </ion-item>
 
     <button ion-button type="button" (click)="addIngredients()">Ingrédients</button>
+    <ion-item>
+      <ion-input id="ingredients" type="text" name="ingredients" disabled value="{{ingredients}}"></ion-input>
+    </ion-item>
+
     <button ion-button type="button" (click)="addAdditifs()">Additifs</button>
+    <ion-item>
+      <ion-input id="additifs" type="text" name="additifs" disabled value="{{additifs}}"></ion-input>
+    </ion-item>
 
     <ion-row>
       <ion-col width-50 style="text-align: right">

@@ -6,6 +6,8 @@ import {NavController, AlertController} from 'ionic-angular';
   templateUrl: 'addProduit.html'
 })
 export class AddProduitPage {
+  ingredients: Array<String> = [];
+  additifs: Array<String> = [];
 
   constructor(public navCtrl: NavController, private alertCtrl: AlertController) {
 
@@ -14,18 +16,19 @@ export class AddProduitPage {
   addIngredients() {
     let alert = this.alertCtrl.create({
       title: 'Ingrédients',
-      message: 'Choisissez des ingrédients',
+      message: 'Nom usuel de l\'ingrédient',
       inputs: [
         {
-          name: 'Ingrédients',
-          placeholder: '...'
+          name: 'ingredient',
+          placeholder: 'Huile de ...'
         },
       ],
       buttons: [
         {
           text: 'Valider',
-          handler: () => {
-
+          handler: data => {
+            this.ingredients.push(data.ingredient);
+            document.getElementById("ingredients").value = this.ingredients.toString();
           }
         },
         {text: 'Annuler'}
@@ -38,18 +41,19 @@ export class AddProduitPage {
   addAdditifs() {
     let alert = this.alertCtrl.create({
       title: 'Additifs',
-      message: 'Choisissez des additifs',
+      message: 'Nom usuel de l\'additif',
       inputs: [
         {
-          name: 'Additifs',
-          placeholder: '...'
+          name: 'additif',
+          placeholder: 'Acide lactique'
         },
       ],
       buttons: [
         {
           text: 'Valider',
-          handler: () => {
-
+          handler: data => {
+            this.additifs.push(data.additif);
+            document.getElementById("additifs").value = this.additifs.toString();
           }
         },
         {text: 'Annuler'}
