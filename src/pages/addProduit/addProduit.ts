@@ -28,7 +28,7 @@ export class AddProduitPage {
           text: 'Valider',
           handler: data => {
             this.ingredients.push(data.ingredient);
-            document.getElementById("ingredients").value = this.ingredients.toString();
+            //document.getElementById("ingredients").value = this.ingredients.toString();
           }
         },
         {text: 'Annuler'}
@@ -53,7 +53,7 @@ export class AddProduitPage {
           text: 'Valider',
           handler: data => {
             this.additifs.push(data.additif);
-            document.getElementById("additifs").value = this.additifs.toString();
+            //document.getElementById("additifs").value = this.additifs.toString();
           }
         },
         {text: 'Annuler'}

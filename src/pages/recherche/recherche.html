@@ -9,16 +9,13 @@
     <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
       <ion-row>
         <ion-col col-4 text-lg-left>
-          <!--{{item.name}}-->
-          Name
+          {{item.product_name}}
         </ion-col>
         <ion-col col-4 text-lg-center>
-          <!--{{item.brands}}-->
-          brands
+          {{item.brands}}
         </ion-col>
         <ion-col col-4 text-lg-right>
-          <!--{{item.countries}}-->
-          countries
+          {{item.countries_fr}}
         </ion-col>
       </ion-row>
     </button>
