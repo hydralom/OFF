@@ -74,10 +74,10 @@ export class AddProduitPage {
   }
 
   setIngredients() {
-    this.infoProd.ingredients = this.tabIngredients.toString();
+    //this.infoProd.ingredients = this.tabIngredients.toString();
   }
 
   setAdditifs() {
-    this.infoProd.additives = this.tabAdditifs.toString();
+    //this.infoProd.additives = this.tabAdditifs.toString();
   }
 }

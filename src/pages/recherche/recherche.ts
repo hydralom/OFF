@@ -11,10 +11,10 @@ import {HttpClient} from "@angular/common/http";
 export class RecherchePage {
   liste_de_produit;
   allItems;
-  items;
+  items : any = [];
   itemsSize;
   SIZE = 100;
-  min = 0;
+  min:number=0;
   max = this.SIZE;
 
   /*
@@ -36,18 +36,18 @@ export class RecherchePage {
     this.http.get("../../assets/data/csv_converti.json")
       .subscribe(data => {
         // this.liste_de_produit = data;
-        // this.items = data;
-        this.allItems = data;
+        this.items = data;
+        /*this.allItems = data;
 
         let size = 0, key;
         for (key in this.allItems) {
           if (this.allItems.hasOwnProperty(key)) size++;
         }
-        this.displayItems();
+        this.displayItems();*/
       })
   }
 
-  nextPage() {
+  /*nextPage() {
     this.min = this.max;
     if (this.max + this.SIZE <= this.itemsSize) {
       this.max += this.SIZE;
@@ -78,11 +78,21 @@ export class RecherchePage {
   // remplirListe(liste){
   //   Object.keys(liste).length
   // }
-
+*/
   itemTapped(event, item) {
     this.navCtrl.push(ItemDetailsPage, {
       item: item
     });
+  }
+
+  oInfinite(infiniteScroll:any) {
+    console.log('doInfinite, start is currently '+this.min);
+    this.min+=50;
+
+    this.items.then(()=>{
+      infiniteScroll.complete();
+    });
+
   }
 
 }
