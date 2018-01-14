@@ -2,15 +2,25 @@ import {Component} from '@angular/core';
 import {NavController, AlertController} from 'ionic-angular';
 
 @Component({
-  selector: 'page-contact',
+  selector: 'page-addProduit',
   templateUrl: 'addProduit.html'
 })
 export class AddProduitPage {
-  ingredients: Array<String> = [];
-  additifs: Array<String> = [];
+  tabIngredients: Array<String> = [];
+  tabAdditifs: Array<String> = [];
+
+  ingredients: String = "";
+  additifs: String = "";
+
+  infoProd = {};
 
   constructor(public navCtrl: NavController, private alertCtrl: AlertController) {
 
+  }
+
+  addProd() {
+    console.log(this.infoProd);
+    this.infoProd = {};
   }
 
   addIngredients() {
@@ -27,15 +37,15 @@ export class AddProduitPage {
         {
           text: 'Valider',
           handler: data => {
-            this.ingredients.push(data.ingredient);
-            //document.getElementById("ingredients").value = this.ingredients.toString();
+            this.tabIngredients.push(data.ingredient);
+            this.setIngredients();
           }
         },
         {text: 'Annuler'}
       ]
 
     });
-    alert.present();
+    alert.  present();
   }
 
   addAdditifs() {
@@ -52,8 +62,8 @@ export class AddProduitPage {
         {
           text: 'Valider',
           handler: data => {
-            this.additifs.push(data.additif);
-            //document.getElementById("additifs").value = this.additifs.toString();
+            this.tabAdditifs.push(data.additif);
+            this.setAdditifs();
           }
         },
         {text: 'Annuler'}
@@ -61,5 +71,13 @@ export class AddProduitPage {
 
     });
     alert.present();
+  }
+
+  setIngredients() {
+    this.infoProd.ingredients = this.tabIngredients.toString();
+  }
+
+  setAdditifs() {
+    this.infoProd.additives = this.tabAdditifs.toString();
   }
 }

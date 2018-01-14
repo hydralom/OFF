@@ -1,38 +1,38 @@
 <ion-header xmlns="http://www.w3.org/1999/html">
   <ion-navbar>
     <ion-title>
-      Contact
+      Ajouter un produit
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <form>
+  <form id="myForm" (ngSubmit)="addProd()">
     <ion-item>
       <ion-label>Nom du produit</ion-label>
-      <ion-input type="text" name="" required></ion-input>
+      <ion-input type="text" [(ngModel)]="infoProd.product_name" name="product_name"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Marque</ion-label>
-      <ion-input type="text" name=""></ion-input>
+      <ion-input type="text" [(ngModel)]="infoProd.brands" name="brands"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Pays d'origine</ion-label>
-      <ion-input type="text" name=""></ion-input>
+      <ion-input type="text" [(ngModel)]="infoProd.countries" name="countries"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Quantité</ion-label>
-      <ion-input type="text" name=""></ion-input>
+      <ion-input type="text" [(ngModel)]="infoProd.serving_size" name="serving_size"></ion-input>
     </ion-item>
 
     <button ion-button type="button" (click)="addIngredients()">Ingrédients</button>
     <ion-item>
-      <ion-input id="ingredients" type="text" name="ingredients" disabled value="{{ingredients}}"></ion-input>
+      <ion-input type="text" [(ngModel)]="infoProd.ingredients" name="ingredients" disabled></ion-input>
     </ion-item>
 
     <button ion-button type="button" (click)="addAdditifs()">Additifs</button>
     <ion-item>
-      <ion-input id="additifs" type="text" name="additifs" disabled value="{{additifs}}"></ion-input>
+      <ion-input type="text" [(ngModel)]="infoProd.additives" name="additives" disabled></ion-input>
     </ion-item>
 
     <ion-row>

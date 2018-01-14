@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {ItemDetailsPage} from '../item-details/item-details';
 
-import { HttpClient } from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'page-recherche',
@@ -10,7 +10,12 @@ import { HttpClient } from "@angular/common/http";
 })
 export class RecherchePage {
   liste_de_produit;
+  allItems;
   items;
+  itemsSize;
+  SIZE = 100;
+  min = 0;
+  max = this.SIZE;
 
   /*
    * Informations affichées sur la page recherche
@@ -24,19 +29,55 @@ export class RecherchePage {
         note: 'This is item #' + i
       });
     }*/
-    this.remplirListe(this.liste_de_produit);
+    // this.remplirListe(this.liste_de_produit);
   }
 
-  ngOnInit():void{
+  ngOnInit(): void {
     this.http.get("../../assets/data/csv_converti.json")
-      .subscribe( data => {
-        this.liste_de_produit = data;
+      .subscribe(data => {
+        // this.liste_de_produit = data;
+        // this.items = data;
+        this.allItems = data;
+
+        let size = 0, key;
+        for (key in this.allItems) {
+          if (this.allItems.hasOwnProperty(key)) size++;
+        }
+        this.displayItems();
       })
   }
 
-  remplirListe(liste){
-    Object.keys(liste).length
+  nextPage() {
+    this.min = this.max;
+    if (this.max + this.SIZE <= this.itemsSize) {
+      this.max += this.SIZE;
+    } else {
+      this.max += (this.itemsSize - this.max);
+    }
+    this.displayItems();
   }
+
+  previousPage() {
+    if (this.min - this.SIZE >= 0) {
+      this.max = this.min;
+      this.min -= this.SIZE;
+    }
+    this.displayItems();
+  }
+
+  displayItems() {
+    this.items = [];
+    console.log(this.items);
+    console.log(this.min);
+    console.log(this.max);
+    for (let i = this.min; i < this.max; i++) {
+      this.items.push(this.allItems[i]);
+    }
+  }
+
+  // remplirListe(liste){
+  //   Object.keys(liste).length
+  // }
 
   itemTapped(event, item) {
     this.navCtrl.push(ItemDetailsPage, {

@@ -2,6 +2,10 @@
   <ion-navbar>
     <ion-title>Recherche</ion-title>
   </ion-navbar>
+  <ion-toolbar>
+    <!--<ion-searchbar placeholder="Rechercher" showCancelButton color="danger" (ionInput)="filterItems($event)"></ion-searchbar>-->
+    <ion-searchbar placeholder="Rechercher" showCancelButton color="danger"></ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
@@ -20,4 +24,20 @@
       </ion-row>
     </button>
   </ion-list>
+
+  <ion-row>
+    <ion-col width-50 style="text-align: right">
+      <button ion-button (click)="previousPage()">
+        <ion-icon name="arrow-back"></ion-icon>
+         Précédent
+      </button>
+    </ion-col>
+    <ion-col width-50 style="text-align: left">
+      <button ion-button (click)="nextPage()">
+        Suivant
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+
 </ion-content>
