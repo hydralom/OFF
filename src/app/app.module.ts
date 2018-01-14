@@ -6,6 +6,7 @@ import {MyApp} from './app.component';
 import {AddProduitPage} from '../pages/addProduit/addProduit';
 import {RecherchePage} from '../pages/recherche/recherche';
 import {ItemDetailsPage} from '../pages/item-details/item-details';
+import {ModifierProduitPage} from "../pages/modifierProduit/modifierProduit";
 import {TabsPage} from '../pages/tabs/tabs';
 import {StatsPage} from "../pages/stats/stats";
 
@@ -20,6 +21,7 @@ import { HttpClientModule } from "@angular/common/http";
     RecherchePage,
     ItemDetailsPage,
     AddProduitPage,
+    ModifierProduitPage,
     TabsPage
   ],
   imports: [
@@ -34,6 +36,7 @@ import { HttpClientModule } from "@angular/common/http";
     AddProduitPage,
     RecherchePage,
     ItemDetailsPage,
+    ModifierProduitPage,
     TabsPage
   ],
   providers: [

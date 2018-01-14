@@ -1,0 +1,51 @@
+<ion-header xmlns="http://www.w3.org/1999/html">
+  <ion-navbar>
+    <ion-title>
+      Modifier un produit
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form id="formulaire" (ngSubmit)="addProd()">
+    <ion-item>
+      <ion-label>Nom du produit</ion-label>
+      <ion-input type="text" [(ngModel)]="selectedItem.product_name" name="product_name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Marque</ion-label>
+      <ion-input type="text" [(ngModel)]="selectedItem.brands" name="brands"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Pays d'origine</ion-label>
+      <ion-input type="text" [(ngModel)]="selectedItem.countries" name="countries"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Quantité</ion-label>
+      <ion-input type="text" [(ngModel)]="selectedItem.serving_size" name="serving_size"></ion-input>
+    </ion-item>
+
+    <button ion-button type="button" (click)="addIngredients()">Ingrédients</button>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="selectedItem.ingredients" name="ingredients" disabled></ion-input>
+    </ion-item>
+
+    <button ion-button type="button" (click)="addAdditifs()">Additifs</button>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="selectedItem.additives" name="additives" disabled></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col width-50 text-right>
+        <button ion-button type="submit" color="secondary">Valider</button>
+      </ion-col>
+      <ion-col width-50 text-left>
+        <button ion-button type="reset" color="danger">Annuler</button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
+

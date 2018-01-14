@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
+
 import {ItemDetailsPage} from '../item-details/item-details';
 
 import {HttpClient} from "@angular/common/http";
@@ -30,7 +31,6 @@ export class RecherchePage {
   }
 
   oInfinite(infiniteScroll:any) {
-    console.log('doInfinite, start is currently '+this.min);
     this.min+=50;
 
     this.items.then(()=>{

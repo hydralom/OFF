@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams, AlertController} from 'ionic-angular';
 
+import {ModifierProduitPage} from "../modifierProduit/modifierProduit";
+
 @Component({
   selector: 'page-item-details',
   templateUrl: 'item-details.html'
@@ -32,6 +34,12 @@ export class ItemDetailsPage {
 
     });
     alert.present();
+  }
+
+  boutonModifierPressed(){
+    this.navCtrl.push(ModifierProduitPage, {
+      item: this.selectedItem
+    });
   }
 
 }
