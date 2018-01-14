@@ -10,37 +10,23 @@
 
 <ion-content>
   <ion-list padding [virtualScroll]="items" approxItemHeight="40px">
-    <button ion-item (click)="itemTapped($event, item)" *virtualItem="let item"><!--*ngFor="let item of items"-->
+    <button ion-item (click)="itemTapped($event, item)" *virtualItem="let item">
       <ion-row>
-        <ion-col text-wrap col-4 text-lg-left>
-          {{item.product_name}} |
+        <ion-col text-wrap col-4 text-left>
+          {{item.product_name}}
         </ion-col>
-        <ion-col text-wrap col-4 text-lg-center>
+        <ion-col text-wrap col-4 text-center>
           {{item.brands}}
         </ion-col>
-        <ion-col text-wrap col-4 text-lg-right>
+        <ion-col text-wrap col-4 text-right>
           {{item.countries_fr}}
         </ion-col>
       </ion-row>
     </button>
   </ion-list>
 
-  <!--<ion-row>
-    <ion-col width-50 style="text-align: right">
-      <button ion-button icon-start (click)="previousPage()">
-        <ion-icon name="arrow-back"></ion-icon>
-         Précédent
-      </button>
-    </ion-col>
-    <ion-col width-50 style="text-align: left">
-      <button ion-button icon-end (click)="nextPage()">
-        Suivant
-        <ion-icon name="arrow-forward"></ion-icon>
-      </button>
-    </ion-col>
-  </ion-row>-->
-
   <ion-infinite-scroll (infinite)="doInfinite($event)">
     <ion-infinite-scroll-content></ion-infinite-scroll-content>
   </ion-infinite-scroll>
+
 </ion-content>
