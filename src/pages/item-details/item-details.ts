@@ -8,10 +8,12 @@ import {NavController, NavParams, AlertController} from 'ionic-angular';
 export class ItemDetailsPage {
   selectedItem: any;
 
+  date_creation: Date;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
-    console.log(this.selectedItem);
+    this.date_creation = this.selectedItem.created_datetime;
   }
 
   onRemove() {

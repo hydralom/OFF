@@ -10,8 +10,171 @@
 <ion-content padding>
   <ion-title text-center>{{selectedItem.product_name}}</ion-title>
 
+  <!--
+     Caractéristiques du produit
+    -->
+  <ion-row padding>
+    <h3>Caractéristiques du produit</h3>
+  </ion-row>
+
+  <ion-row class="contenu">
+    <ion-col col-2><strong>Marque : </strong></ion-col>
+    <ion-col text-left>{{selectedItem.brands}}</ion-col>
+  </ion-row>
+
+  <ion-row class="contenu">
+    <ion-col col-2><strong>Pays de vente : </strong></ion-col>
+    <ion-col text-left>{{selectedItem.countries_fr}}</ion-col>
+  </ion-row>
+
+  <!--
+     Ingrédients
+    -->
+  <ion-row padding>
+    <h3>Ingrédients</h3>
+  </ion-row>
+
+  <ion-row class="contenu">
+    <ion-col col-1 icon-end><ion-icon name="arrow-forward"></ion-icon></ion-col>
+    <ion-col text-left>Les ingrédients sont listés par ordre d'importance (quantité).</ion-col>
+  </ion-row>
+
   <ion-row>
-    <button ion-button>Modifier</button>
-    <button ion-button color="danger" (click)="onRemove()">Supprimer</button>
+    <strong>Ingrédients :</strong>
+  </ion-row>
+  <ion-row class="contenu">
+    {{selectedItem.ingredients_text}}
+  </ion-row>
+
+  <ion-row>
+    <strong>Additifs :</strong>
+  </ion-row>
+  <ion-row class="contenu">
+    {{selectedItem.additives_fr}}
+  </ion-row>
+
+  <ion-row class="contenu">
+    <ion-col col-5 text-wrap><strong>Nombre d'ingrédients contenant de l'huile de palme : </strong></ion-col>
+    <ion-col text-left>{{selectedItem.ingredients_from_palm_oil_n}}</ion-col>
+  </ion-row>
+
+  <ion-row class="contenu">
+    <ion-col col-5 text-wrap><strong>Nombre d'ingrédients pouvant contenir de l'huile de palme : </strong></ion-col>
+    <ion-col text-left>{{selectedItem.ingredients_that_may_be_from_palm_oil_n}}</ion-col>
+  </ion-row>
+
+  <!--
+     Informations nutritionnelles
+    -->
+  <ion-row padding>
+    <h3>Informations nutritionnelles</h3>
+  </ion-row>
+  <ion-row class="contenu">
+    <ion-col col-3><strong>Taille d'une portion : </strong></ion-col>
+    <ion-col text-left>{{selectedItem.serving_size}}</ion-col>
+  </ion-row>
+  <ion-row class="contenu">
+    <ion-col col-3><strong>Grade nutritionnel : </strong></ion-col>
+    <ion-col text-left>{{selectedItem.nutrition_grade_fr}}</ion-col>
+  </ion-row>
+
+  <!--
+
+    -->
+  <ion-grid>
+    <ion-row>
+      <ion-col col-10>Informations nutritionnelles</ion-col>
+      <ion-col col-2>pour 100g / 100ml</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-10>Energie</ion-col>
+      <ion-col col-2>{{selectedItem.energy_100g}} kj</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-10>Matières grasses / Lipides</ion-col>
+      <ion-col col-2>{{selectedItem.fat_100g}} g</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-1></ion-col>
+      <ion-col col-9>dont Acides gras saturés</ion-col>
+      <ion-col col-2>{{selectedItem.saturated_fat_100g}} g</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-1></ion-col>
+      <ion-col col-9>dont Acides gras trans</ion-col>
+      <ion-col col-2>{{selectedItem.trans_fat_100g}} g</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-1></ion-col>
+      <ion-col col-9>dont Cholestérol</ion-col>
+      <ion-col col-2>{{selectedItem.cholesterol_100g}} mg</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-10>Glucides</ion-col>
+      <ion-col col-2>{{selectedItem.carbohydrates_100g}} g</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-1></ion-col>
+      <ion-col col-9>dont Sucres</ion-col>
+      <ion-col col-2>{{selectedItem.sugars_100g}} g</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-10>Fibres alimentaires</ion-col>
+      <ion-col col-2>{{selectedItem.fiber_100g}} g</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-10>Protéines</ion-col>
+      <ion-col col-2>{{selectedItem.proteins_100g}} g</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-10>Sel</ion-col>
+      <ion-col col-2>{{selectedItem.salt_100g}} g</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-1></ion-col>
+      <ion-col col-9>Sodium</ion-col>
+      <ion-col col-2>{{selectedItem.sodium_100g}} g</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-10>Vitamine A (rétinol)</ion-col>
+      <ion-col col-2>{{selectedItem.vitamin_a_100g}} ug</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-10>Vitamine C (acide ascorbique)</ion-col>
+      <ion-col col-2>{{selectedItem.vitamin_c_100g}} mg</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-10>Calcium</ion-col>
+      <ion-col col-2>{{selectedItem.calcium_100g}} mg</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-10>Fer</ion-col>
+      <ion-col col-2>{{selectedItem.iron_100g}} mg</ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!--
+     Boutons
+    -->
+  <ion-row padding text-right>
+    <ion-col>
+      Créé le {{date_creation}} par <strong>{{selectedItem.creator}}</strong>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col width-50 text-right>
+      <button ion-button>Modifier</button>
+    </ion-col>
+    <ion-col width-50 text-left>
+      <button ion-button color="danger" (click)="onRemove()">Supprimer</button>
+    </ion-col>
   </ion-row>
 </ion-content>
+
+
+
+<!--
+    "url": "http://world-fr.openfoodfacts.org/produit/0000000001663/creme-dessert-chocolat-ferme-de-la-fremondiere", //a voir
+
+-->
