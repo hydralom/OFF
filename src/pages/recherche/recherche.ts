@@ -10,8 +10,8 @@ import {HttpClient} from "@angular/common/http";
   templateUrl: 'recherche.html'
 })
 export class RecherchePage {
-  items : any = [];
-  min:number=0;
+  items: any = [];
+  min: number = 0;
 
   constructor(public navCtrl: NavController, public http: HttpClient) {
 
@@ -30,13 +30,23 @@ export class RecherchePage {
     });
   }
 
-  oInfinite(infiniteScroll:any) {
-    this.min+=50;
+  oInfinite(infiniteScroll: any) {
+    this.min += 50;
 
-    this.items.then(()=>{
+    this.items.then(() => {
       infiniteScroll.complete();
     });
 
+  }
+
+  filterItems(ev: any) {
+    let val = ev.target.value;
+
+    if (val && val.trim() !== '') {
+      this.items = this.items.filter(function (item) {
+        return item.product_name.toLowerCase().includes(val.toLowerCase());
+      });
+    }
   }
 
 }

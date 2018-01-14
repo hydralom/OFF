@@ -27,12 +27,12 @@
 
     <button ion-button type="button" (click)="addIngredients()">Ingrédients</button>
     <ion-item>
-      <ion-input type="text" [(ngModel)]="infoProd.ingredients" name="ingredients" disabled></ion-input>
+      <ion-input type="text" [(ngModel)]="infoProd.ingredients" name="ingredients" value="{{tabIngredients}}" disabled></ion-input>
     </ion-item>
 
     <button ion-button type="button" (click)="addAdditifs()">Additifs</button>
     <ion-item>
-      <ion-input type="text" [(ngModel)]="infoProd.additives" name="additives" disabled></ion-input>
+      <ion-input type="text" [(ngModel)]="infoProd.additives" name="additives" value="{{tabAdditifs}}" disabled></ion-input>
     </ion-item>
 
     <ion-row>
