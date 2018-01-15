@@ -4,10 +4,10 @@
   </ion-navbar>
   <ion-toolbar>
     <ion-row>
-      <ion-col col-11>
+      <ion-col>
         <ion-searchbar placeholder="Rechercher" color="danger" (ionInput)="filterItems($event)"></ion-searchbar>
       </ion-col>
-      <ion-col col-1>
+      <ion-col col-5 col-sm-4 col-md-3 col-lg-2 col-xl-2>
         <button ion-button icon-end (click)="openCloseCard()" outline>
           Avancée...
           <ion-icon name="arrow-down" *ngIf="!cardAdvancedSearchViewShow"></ion-icon>
