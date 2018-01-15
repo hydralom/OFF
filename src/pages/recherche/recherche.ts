@@ -52,8 +52,4 @@ export class RecherchePage {
     }
   }
 
-  onCancel(ev: any){
-    //this.ngOnInit();
-  }
-
 }

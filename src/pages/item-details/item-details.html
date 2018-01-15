@@ -156,9 +156,14 @@
   <!--
      Boutons
     -->
-  <ion-row padding text-right>
+  <ion-row padding-top text-right>
     <ion-col>
-      Créé le {{date_creation}} par <strong>{{selectedItem.creator}}</strong>
+      Créé le {{selectedItem.created_datetime}} par <strong>{{selectedItem.creator}}</strong>
+    </ion-col>
+  </ion-row>
+  <ion-row text-right>
+    <ion-col>
+      Modifié le {{selectedItem.last_modified_datetime}} par <strong>{{selectedItem.creator}}</strong>
     </ion-col>
   </ion-row>
 
