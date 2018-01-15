@@ -11,16 +11,18 @@ import {HttpClient} from "@angular/common/http";
 })
 export class RecherchePage {
   items: any = [];
+  items_complete: any = [];
+
   min: number = 0;
 
   constructor(public navCtrl: NavController, public http: HttpClient) {
-
   }
 
   ngOnInit(): void {
     this.http.get("../../assets/data/csv_converti.json")
       .subscribe(data => {
         this.items = data;
+        this.items_complete = data;
       })
   }
 
@@ -36,17 +38,22 @@ export class RecherchePage {
     this.items.then(() => {
       infiniteScroll.complete();
     });
-
   }
 
   filterItems(ev: any) {
     let val = ev.target.value;
-
     if (val && val.trim() !== '') {
       this.items = this.items.filter(function (item) {
         return item.product_name.toLowerCase().includes(val.toLowerCase());
       });
+    }else{
+      this.items = this.items_complete;
+      return this.items;
     }
+  }
+
+  onCancel(ev: any){
+    //this.ngOnInit();
   }
 
 }
