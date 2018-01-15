@@ -10,7 +10,7 @@
   <form id="myForm" (ngSubmit)="addProd()">
     <ion-item>
       <ion-label>Nom du produit</ion-label>
-      <ion-input type="text" [(ngModel)]="infoProd.product_name" name="product_name"></ion-input>
+      <ion-input type="text" [(ngModel)]="infoProd.product_name" name="product_name" clearInput></ion-input>
     </ion-item>
 
 
@@ -18,11 +18,11 @@
     <h3>Caractéristiques du produit</h3>
     <ion-item>
       <ion-label>Marque :</ion-label>
-      <ion-input type="text" [(ngModel)]="infoProd.brands" name="brands"></ion-input>
+      <ion-input type="text" [(ngModel)]="infoProd.brands" name="brands" clearInput></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Pays de vente :</ion-label>
-      <ion-input type="text" [(ngModel)]="infoProd.countries" name="countries"></ion-input>
+      <ion-input type="text" [(ngModel)]="infoProd.countries" name="countries" clearInput></ion-input>
     </ion-item>
 
     <!--Ingrédients-->
@@ -41,12 +41,12 @@
     <h4>Nombre d'ingrédients...</h4>
     <ion-item>
       <ion-label>contenant de l'huile de palme :</ion-label>
-      <ion-input type="number" [(ngModel)]="infoProd.ingredients_from_palm_oil_n" placeholder="0"
+      <ion-input type="number" [(ngModel)]="infoProd.ingredients_from_palm_oil_n" placeholder="0" clearInput
                  name="ingredients_from_palm_oil_n"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>pouvant contenir de l'huile de palme :</ion-label>
-      <ion-input type="number" [(ngModel)]="infoProd.ingredients_that_may_be_from_palm_oil_n" placeholder="0"
+      <ion-input type="number" [(ngModel)]="infoProd.ingredients_that_may_be_from_palm_oil_n" placeholder="0" clearInput
                  name="ingredients_that_may_be_from_palm_oil_n"></ion-input>
     </ion-item>
 
@@ -54,7 +54,8 @@
     <h3>Informations nutritionnelles</h3>
     <ion-item>
       <ion-label>Taille d'une portion :</ion-label>
-      <ion-input type="number" [(ngModel)]="infoProd.serving_size" name="serving_size" placeholder="100g"></ion-input>
+      <ion-input type="number" [(ngModel)]="infoProd.serving_size" name="serving_size" placeholder="100g"
+                 clearInput></ion-input>
     </ion-item>
 
     <h4>Grade nutritionnel :</h4>
