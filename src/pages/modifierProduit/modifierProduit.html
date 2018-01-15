@@ -58,39 +58,37 @@
     </ion-item>
 
     <h4>Grade nutritionnel :</h4>
-    <ion-row>
-      <ion-list radio-group [(ngModel)]="selectedItem.nutrition_grade_fr" name="nutrition_grade_fr">
-        <ion-col>
-          <ion-item>
-            <ion-label>A</ion-label>
-            <ion-radio value="a" checked></ion-radio>
-          </ion-item>
-        </ion-col>
-        <ion-col>
-          <ion-item>
-            <ion-label>B</ion-label>
-            <ion-radio value="b"></ion-radio>
-          </ion-item>
-        </ion-col>
-        <ion-col>
-          <ion-item>
-            <ion-label>C</ion-label>
-            <ion-radio value="c"></ion-radio>
-          </ion-item>
-        </ion-col>
-        <ion-col>
-          <ion-item>
-            <ion-label>D</ion-label>
-            <ion-radio value="d"></ion-radio>
-          </ion-item>
-        </ion-col>
-        <ion-col>
-          <ion-item>
-            <ion-label>E</ion-label>
-            <ion-radio value="e"></ion-radio>
-          </ion-item>
-        </ion-col>
-      </ion-list>
+    <ion-row radio-group [(ngModel)]="selectedItem.nutrition_grade_fr" name="nutrition_grade_fr">
+      <ion-col>
+        <ion-item>
+          <ion-label>A</ion-label>
+          <ion-radio value="a" checked></ion-radio>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label>B</ion-label>
+          <ion-radio value="b"></ion-radio>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label>C</ion-label>
+          <ion-radio value="c"></ion-radio>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label>D</ion-label>
+          <ion-radio value="d"></ion-radio>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label>E</ion-label>
+          <ion-radio value="e"></ion-radio>
+        </ion-item>
+      </ion-col>
     </ion-row>
     <ion-row>
       <ion-col width-50 text-right>
