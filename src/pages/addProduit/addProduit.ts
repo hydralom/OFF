@@ -9,12 +9,13 @@ export class AddProduitPage {
   tabIngredients: Array<String> = [];
   tabAdditifs: Array<String> = [];
 
-  ingredients: String = "";
-  additifs: String = "";
-
   infoProd = {};
 
   constructor(public navCtrl: NavController, private alertCtrl: AlertController) {
+
+  }
+
+  ngOnInit(): void {
 
   }
 
@@ -37,15 +38,14 @@ export class AddProduitPage {
         {
           text: 'Valider',
           handler: data => {
-            this.tabIngredients.push(data.ingredient);
-            this.setIngredients();
+
           }
         },
         {text: 'Annuler'}
       ]
 
     });
-    alert.  present();
+    alert.present();
   }
 
   addAdditifs() {
@@ -62,8 +62,7 @@ export class AddProduitPage {
         {
           text: 'Valider',
           handler: data => {
-            this.tabAdditifs.push(data.additif);
-            this.setAdditifs();
+
           }
         },
         {text: 'Annuler'}
@@ -73,11 +72,4 @@ export class AddProduitPage {
     alert.present();
   }
 
-  setIngredients() {
-    //this.infoProd.ingredients = this.tabIngredients.toString();
-  }
-
-  setAdditifs() {
-    //this.infoProd.additives = this.tabAdditifs.toString();
-  }
 }
