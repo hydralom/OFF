@@ -7,5 +7,36 @@
 </ion-header>
 
 <ion-content padding>
+  <button ion-button small (click)="ouvrirFermerCard()">
+    Ouvrir card
+  </button>
 
+  <ion-card no-padding *ngIf="cardExempleViewShow">
+    <ion-card-content>
+      <ion-card-title>
+        Titre de la card
+      </ion-card-title>
+
+      <ion-row>
+        <ion-col text-left col-1>
+          <ion-icon class="icon" ios="ios-car" md="md-car"></ion-icon>
+        </ion-col>
+        <ion-col text-right offset-5 col-6>
+          Ceci est une donnée
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-left offset-1 col-8>
+          {{ville_parking}}
+        </ion-col>
+        <ion-col text-right col-3>
+          <button ion-button small (click)="fermerInfosParkingViaBouton()">
+            Fermer
+          </button>
+        </ion-col>
+      </ion-row>
+
+    </ion-card-content>
+  </ion-card>
 </ion-content>
