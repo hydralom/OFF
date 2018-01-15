@@ -15,7 +15,21 @@ export class RecherchePage {
 
   min: number = 0;
 
+  cardAdvancedSearchViewShow: Boolean = false;
+
   constructor(public navCtrl: NavController, public http: HttpClient) {
+  }
+
+  openCloseCard() {
+    if (this.cardAdvancedSearchViewShow) {
+      this.cardAdvancedSearchViewShow = false;
+    } else {
+      this.cardAdvancedSearchViewShow = true;
+    }
+  }
+
+  closeAdvancedSearch() {
+    this.cardAdvancedSearchViewShow = false;
   }
 
   ngOnInit(): void {
@@ -46,10 +60,9 @@ export class RecherchePage {
       this.items = this.items.filter(function (item) {
         return item.product_name.toLowerCase().includes(val.toLowerCase());
       });
-    }else{
+    } else {
       this.items = this.items_complete;
       return this.items;
     }
   }
-
 }
