@@ -16,6 +16,11 @@ export class RecherchePage {
   min: number = 0;
 
   cardAdvancedSearchViewShow: Boolean = false;
+  additives_n: Boolean = false;
+  ingredients_from_palm_oil_n: Boolean = false;
+  ingredients_that_may_be_from_palm_oil_n: Boolean = false;
+
+  infoSearch;
 
   constructor(public navCtrl: NavController, public http: HttpClient) {
   }
@@ -30,6 +35,9 @@ export class RecherchePage {
 
   closeAdvancedSearch() {
     this.cardAdvancedSearchViewShow = false;
+    this.additives_n = false;
+    this.ingredients_from_palm_oil_n = false;
+    this.ingredients_that_may_be_from_palm_oil_n = false;
   }
 
   ngOnInit(): void {
@@ -56,9 +64,17 @@ export class RecherchePage {
 
   filterItems(ev: any) {
     let val = ev.target.value;
-    if (val && val.trim() !== '') {
+    if (val && val.trim() !== '' && this.infoSearch == "product_name") {
       this.items = this.items.filter(function (item) {
         return item.product_name.toLowerCase().includes(val.toLowerCase());
+      });
+    } else if (val && val.trim() !== '' && this.infoSearch == "brands") {
+      this.items = this.items.filter(function (item) {
+        return item.brands.toLowerCase().includes(val.toLowerCase());
+      });
+    } else if (val && val.trim() !== '' && this.infoSearch == "countries_fr") {
+      this.items = this.items.filter(function (item) {
+        return item.countries_fr.toLowerCase().includes(val.toLowerCase());
       });
     } else {
       this.items = this.items_complete;

@@ -29,6 +29,27 @@
           </ion-col>
         </ion-row>
 
+        <ion-row radio-group [(ngModel)]="infoSearch">
+          <ion-col>
+            <ion-item>
+              <ion-label>Nom</ion-label>
+              <ion-radio value="product_name" checked></ion-radio>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label>Marque</ion-label>
+              <ion-radio value="brands"></ion-radio>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label>Pays</ion-label>
+              <ion-radio value="countries_fr"></ion-radio>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
         <h2>Ingrédients</h2>
         <ion-list>
           <ion-row>
