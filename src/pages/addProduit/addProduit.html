@@ -92,10 +92,111 @@
       </ion-col>
     </ion-row>
 
-    <!--<ion-item>-->
-    <!--<ion-label></ion-label>-->
-    <!--<ion-input type="" [(ngModel)]="infoProd." name=""></ion-input>-->
-    <!--</ion-item>-->
+    <!--
+      Tableau
+    -->
+    <ion-grid>
+      <ion-row>
+        <ion-col col-10>Informations nutritionnelles</ion-col>
+        <ion-col col-2>pour 100g / 100ml</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-10>Energie</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="infoProd.energy_100g" name="energy_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-10>Matières grasses / Lipides</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="infoProd.fat_100g" name="fat_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1></ion-col>
+        <ion-col col-9>dont Acides gras saturés</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="infoProd.saturated_fat_100g" name="saturated_fat_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1></ion-col>
+        <ion-col col-9>dont Acides gras trans</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="infoProd.trans_fat_100g" name="trans_fat_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1></ion-col>
+        <ion-col col-9>dont Cholestérol</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="infoProd.cholesterol_100g" name="cholesterol_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-10>Glucides</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="infoProd.carbohydrates_100g" name="carbohydrates_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1></ion-col>
+        <ion-col col-9>dont Sucres</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="infoProd.sugars_100g" name="sugars_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-10>Fibres alimentaires</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="infoProd.fiber_100g" name="fiber_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-10>Protéines</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="infoProd.proteins_100g" name="proteins_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-10>Sel</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="infoProd.salt_100g" name="salt_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1></ion-col>
+        <ion-col col-9>Sodium</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="infoProd.sodium_100g" name="sodium_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-10>Vitamine A (rétinol)</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="infoProd.vitamin_a_100g" name="vitamin_a_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-10>Vitamine C (acide ascorbique)</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="infoProd.vitamin_c_100g" name="vitamin_c_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-10>Calcium</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="infoProd.calcium_100g" name="calcium_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-10>Fer</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="infoProd.iron_100g" name="iron_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+    </ion-grid>
+
 
     <ion-row>
       <ion-col width-50 style="text-align: right">

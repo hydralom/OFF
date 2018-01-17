@@ -58,8 +58,19 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-list padding [virtualScroll]="items" approxItemHeight="40px">
+<ion-content padding>
+  <ion-row>
+    <ion-col text-wrap col-4 text-center>
+      <h4>Nom</h4>
+    </ion-col>
+    <ion-col text-wrap col-4 text-center>
+      <h4>Marque</h4>
+    </ion-col>
+    <ion-col text-wrap col-4 text-center>
+      <h4>Pays</h4>
+    </ion-col>
+  </ion-row>
+  <ion-list [virtualScroll]="items" approxItemHeight="40px">
     <button ion-item (click)="itemTapped($event, item)" *virtualItem="let item">
       <ion-row>
         <ion-col id="product_name" text-wrap col-4 text-left>

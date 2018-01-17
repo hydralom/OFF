@@ -45,7 +45,8 @@
     </ion-item>
     <ion-item>
       <ion-label>pouvant contenir de l'huile de palme :</ion-label>
-      <ion-input type="number" [(ngModel)]="selectedItem.ingredients_that_may_be_from_palm_oil_n" placeholder="0" clearInput
+      <ion-input type="number" [(ngModel)]="selectedItem.ingredients_that_may_be_from_palm_oil_n" placeholder="0"
+                 clearInput
                  name="ingredients_that_may_be_from_palm_oil_n"></ion-input>
     </ion-item>
 
@@ -90,6 +91,112 @@
         </ion-item>
       </ion-col>
     </ion-row>
+
+    <!--
+  Tableau
+  -->
+    <ion-grid>
+      <ion-row>
+        <ion-col col-10>Informations nutritionnelles</ion-col>
+        <ion-col col-2>pour 100g / 100ml</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-10>Energie</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="selectedItem.energy_100g" name="energy_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-10>Matières grasses / Lipides</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="selectedItem.fat_100g" name="fat_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1></ion-col>
+        <ion-col col-9>dont Acides gras saturés</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="selectedItem.saturated_fat_100g" name="saturated_fat_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1></ion-col>
+        <ion-col col-9>dont Acides gras trans</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="selectedItem.trans_fat_100g" name="trans_fat_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1></ion-col>
+        <ion-col col-9>dont Cholestérol</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="selectedItem.cholesterol_100g" name="cholesterol_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-10>Glucides</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="selectedItem.carbohydrates_100g" name="carbohydrates_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1></ion-col>
+        <ion-col col-9>dont Sucres</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="selectedItem.sugars_100g" name="sugars_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-10>Fibres alimentaires</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="selectedItem.fiber_100g" name="fiber_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-10>Protéines</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="selectedItem.proteins_100g" name="proteins_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-10>Sel</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="selectedItem.salt_100g" name="salt_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1></ion-col>
+        <ion-col col-9>Sodium</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="selectedItem.sodium_100g" name="sodium_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-10>Vitamine A (rétinol)</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="selectedItem.vitamin_a_100g" name="vitamin_a_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-10>Vitamine C (acide ascorbique)</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="selectedItem.vitamin_c_100g" name="vitamin_c_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-10>Calcium</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="selectedItem.calcium_100g" name="calcium_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col col-10>Fer</ion-col>
+        <ion-item col-2>
+          <ion-input type="number" [(ngModel)]="selectedItem.iron_100g" name="iron_100g"></ion-input>
+        </ion-item>
+      </ion-row>
+    </ion-grid>
+
     <ion-row>
       <ion-col width-50 text-right>
         <button ion-button type="submit" color="secondary">Valider</button>
