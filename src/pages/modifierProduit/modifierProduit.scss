@@ -1,11 +1,14 @@
 page-modifierProduit {
-  //.contenu{
-  //  padding-bottom: 5px;
-  //}
-
-  //ion-grid ion-row ion-col,
-  //ion-grid ion-row ion-item,
   ion-grid {
     border: 1px black groove;
+  }
+
+  .card{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    top: auto;
+    z-index: 500;
   }
 }
