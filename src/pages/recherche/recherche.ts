@@ -83,6 +83,13 @@ export class RecherchePage {
 
   filterItems(ev: any) {
     let val = ev.target.value;
+
+    //ne pas regarder le if qui suit svp :)
+    if (this.newItem && !this.items_complete.find(this.findProductName, this.newItem.product_name.toLocaleLowerCase())) {
+      //vous êtes pas gentil :'(
+      this.items_complete.push(this.newItem);
+    }
+
     if (val && val.trim() !== '' && this.infoSearch == "product_name") {
       this.items = this.items.filter(function (item) {
         return item.product_name.toLowerCase().includes(val.toLowerCase());
