@@ -1,13 +1,20 @@
 page-recherche {
   #brands{
-    background-color: lightgrey;
+    //background-color: lightgrey;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: darkgray;
+
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-left-color: darkgray;
   }
 
   #countries_fr{
-    background-color: lightcoral;
+    //background-color: lightcoral;
   }
 
   #product_name{
-    background-color: lightblue;
+    //background-color: lightblue;
   }
 }
