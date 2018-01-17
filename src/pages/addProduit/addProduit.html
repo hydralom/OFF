@@ -10,7 +10,7 @@
   <form id="myForm" (ngSubmit)="addProd()">
     <ion-item>
       <ion-label>Nom du produit</ion-label>
-      <ion-input type="text" [(ngModel)]="infoProd.product_name" name="product_name" clearInput></ion-input>
+      <ion-input type="text" [(ngModel)]="product_name" name="product_name" clearInput></ion-input>
     </ion-item>
 
 
@@ -18,35 +18,27 @@
     <h3>Caractéristiques du produit</h3>
     <ion-item>
       <ion-label>Marque :</ion-label>
-      <ion-input type="text" [(ngModel)]="infoProd.brands" name="brands" clearInput></ion-input>
+      <ion-input type="text" [(ngModel)]="brands" name="brands" clearInput></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Pays de vente :</ion-label>
-      <ion-input type="text" [(ngModel)]="infoProd.countries" name="countries" clearInput></ion-input>
+      <ion-input type="text" [(ngModel)]="countries_fr" name="countries_fr" clearInput></ion-input>
     </ion-item>
 
     <!--Ingrédients-->
     <h3>Ingrédients</h3>
-    <button ion-button type="button" (click)="addIngredients()">Ingrédients</button>
-    <ion-item>
-      <ion-input type="text" [(ngModel)]="infoProd.ingredients" name="ingredients" disabled></ion-input>
-    </ion-item>
 
     <!--Additifs-->
-    <button ion-button type="button" (click)="addAdditifs()">Additifs</button>
-    <ion-item>
-      <ion-input type="text" [(ngModel)]="infoProd.additives" name="additives" disabled></ion-input>
-    </ion-item>
 
     <h4>Nombre d'ingrédients...</h4>
     <ion-item>
       <ion-label>contenant de l'huile de palme :</ion-label>
-      <ion-input type="number" [(ngModel)]="infoProd.ingredients_from_palm_oil_n" placeholder="0" clearInput
+      <ion-input type="number" [(ngModel)]="ingredients_from_palm_oil_n" placeholder="0" clearInput
                  name="ingredients_from_palm_oil_n"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>pouvant contenir de l'huile de palme :</ion-label>
-      <ion-input type="number" [(ngModel)]="infoProd.ingredients_that_may_be_from_palm_oil_n" placeholder="0" clearInput
+      <ion-input type="number" [(ngModel)]="ingredients_that_may_be_from_palm_oil_n" placeholder="0" clearInput
                  name="ingredients_that_may_be_from_palm_oil_n"></ion-input>
     </ion-item>
 
@@ -54,12 +46,12 @@
     <h3>Informations nutritionnelles</h3>
     <ion-item>
       <ion-label>Taille d'une portion :</ion-label>
-      <ion-input type="number" [(ngModel)]="infoProd.serving_size" name="serving_size" placeholder="100g"
+      <ion-input type="number" [(ngModel)]="serving_size" name="serving_size" placeholder="100g"
                  clearInput></ion-input>
     </ion-item>
 
     <h4>Grade nutritionnel :</h4>
-    <ion-row radio-group [(ngModel)]="infoProd.nutrition_grade_fr" name="nutrition_grade_fr">
+    <ion-row radio-group [(ngModel)]="nutrition_grade_fr" name="nutrition_grade_fr">
       <ion-col>
         <ion-item>
           <ion-label>A</ion-label>
@@ -103,96 +95,96 @@
       <ion-row>
         <ion-col col-10>Energie</ion-col>
         <ion-item col-2>
-          <ion-input type="number" [(ngModel)]="infoProd.energy_100g" name="energy_100g"></ion-input>
+          <ion-input type="number" [(ngModel)]="energy_100g" name="energy_100g"></ion-input>
         </ion-item>
       </ion-row>
       <ion-row>
         <ion-col col-10>Matières grasses / Lipides</ion-col>
         <ion-item col-2>
-          <ion-input type="number" [(ngModel)]="infoProd.fat_100g" name="fat_100g"></ion-input>
+          <ion-input type="number" [(ngModel)]="fat_100g" name="fat_100g"></ion-input>
         </ion-item>
       </ion-row>
       <ion-row>
         <ion-col col-1></ion-col>
         <ion-col col-9>dont Acides gras saturés</ion-col>
         <ion-item col-2>
-          <ion-input type="number" [(ngModel)]="infoProd.saturated_fat_100g" name="saturated_fat_100g"></ion-input>
+          <ion-input type="number" [(ngModel)]="saturated_fat_100g" name="saturated_fat_100g"></ion-input>
         </ion-item>
       </ion-row>
       <ion-row>
         <ion-col col-1></ion-col>
         <ion-col col-9>dont Acides gras trans</ion-col>
         <ion-item col-2>
-          <ion-input type="number" [(ngModel)]="infoProd.trans_fat_100g" name="trans_fat_100g"></ion-input>
+          <ion-input type="number" [(ngModel)]="trans_fat_100g" name="trans_fat_100g"></ion-input>
         </ion-item>
       </ion-row>
       <ion-row>
         <ion-col col-1></ion-col>
         <ion-col col-9>dont Cholestérol</ion-col>
         <ion-item col-2>
-          <ion-input type="number" [(ngModel)]="infoProd.cholesterol_100g" name="cholesterol_100g"></ion-input>
+          <ion-input type="number" [(ngModel)]="cholesterol_100g" name="cholesterol_100g"></ion-input>
         </ion-item>
       </ion-row>
       <ion-row>
         <ion-col col-10>Glucides</ion-col>
         <ion-item col-2>
-          <ion-input type="number" [(ngModel)]="infoProd.carbohydrates_100g" name="carbohydrates_100g"></ion-input>
+          <ion-input type="number" [(ngModel)]="carbohydrates_100g" name="carbohydrates_100g"></ion-input>
         </ion-item>
       </ion-row>
       <ion-row>
         <ion-col col-1></ion-col>
         <ion-col col-9>dont Sucres</ion-col>
         <ion-item col-2>
-          <ion-input type="number" [(ngModel)]="infoProd.sugars_100g" name="sugars_100g"></ion-input>
+          <ion-input type="number" [(ngModel)]="sugars_100g" name="sugars_100g"></ion-input>
         </ion-item>
       </ion-row>
       <ion-row>
         <ion-col col-10>Fibres alimentaires</ion-col>
         <ion-item col-2>
-          <ion-input type="number" [(ngModel)]="infoProd.fiber_100g" name="fiber_100g"></ion-input>
+          <ion-input type="number" [(ngModel)]="fiber_100g" name="fiber_100g"></ion-input>
         </ion-item>
       </ion-row>
       <ion-row>
         <ion-col col-10>Protéines</ion-col>
         <ion-item col-2>
-          <ion-input type="number" [(ngModel)]="infoProd.proteins_100g" name="proteins_100g"></ion-input>
+          <ion-input type="number" [(ngModel)]="proteins_100g" name="proteins_100g"></ion-input>
         </ion-item>
       </ion-row>
       <ion-row>
         <ion-col col-10>Sel</ion-col>
         <ion-item col-2>
-          <ion-input type="number" [(ngModel)]="infoProd.salt_100g" name="salt_100g"></ion-input>
+          <ion-input type="number" [(ngModel)]="salt_100g" name="salt_100g"></ion-input>
         </ion-item>
       </ion-row>
       <ion-row>
         <ion-col col-1></ion-col>
         <ion-col col-9>Sodium</ion-col>
         <ion-item col-2>
-          <ion-input type="number" [(ngModel)]="infoProd.sodium_100g" name="sodium_100g"></ion-input>
+          <ion-input type="number" [(ngModel)]="sodium_100g" name="sodium_100g"></ion-input>
         </ion-item>
       </ion-row>
       <ion-row>
         <ion-col col-10>Vitamine A (rétinol)</ion-col>
         <ion-item col-2>
-          <ion-input type="number" [(ngModel)]="infoProd.vitamin_a_100g" name="vitamin_a_100g"></ion-input>
+          <ion-input type="number" [(ngModel)]="vitamin_a_100g" name="vitamin_a_100g"></ion-input>
         </ion-item>
       </ion-row>
       <ion-row>
         <ion-col col-10>Vitamine C (acide ascorbique)</ion-col>
         <ion-item col-2>
-          <ion-input type="number" [(ngModel)]="infoProd.vitamin_c_100g" name="vitamin_c_100g"></ion-input>
+          <ion-input type="number" [(ngModel)]="vitamin_c_100g" name="vitamin_c_100g"></ion-input>
         </ion-item>
       </ion-row>
       <ion-row>
         <ion-col col-10>Calcium</ion-col>
         <ion-item col-2>
-          <ion-input type="number" [(ngModel)]="infoProd.calcium_100g" name="calcium_100g"></ion-input>
+          <ion-input type="number" [(ngModel)]="calcium_100g" name="calcium_100g"></ion-input>
         </ion-item>
       </ion-row>
       <ion-row>
         <ion-col col-10>Fer</ion-col>
         <ion-item col-2>
-          <ion-input type="number" [(ngModel)]="infoProd.iron_100g" name="iron_100g"></ion-input>
+          <ion-input type="number" [(ngModel)]="iron_100g" name="iron_100g"></ion-input>
         </ion-item>
       </ion-row>
     </ion-grid>

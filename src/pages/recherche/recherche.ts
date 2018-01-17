@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {NavController, NavParams} from 'ionic-angular';
 
 import {ItemDetailsPage} from '../item-details/item-details';
 
@@ -9,9 +9,11 @@ import {HttpClient} from "@angular/common/http";
   selector: 'page-recherche',
   templateUrl: 'recherche.html'
 })
+
 export class RecherchePage {
   items: any = [];
   items_complete: any = [];
+  newItem: any;
 
   min: number = 0;
 
@@ -20,9 +22,34 @@ export class RecherchePage {
   ingredients_from_palm_oil_n: Boolean = false;
   ingredients_that_may_be_from_palm_oil_n: Boolean = false;
 
-  infoSearch;
+  infoSearch = "product_name";
 
-  constructor(public navCtrl: NavController, public http: HttpClient) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient) {
+    this.newItem = navParams.get('item');
+    // if (this.newItem && this.items_complete.find(this.findProductName, this.newItem.product_name.toLocaleLowerCase())) {
+    //   let alert = this.alertCtrl.create({
+    //     title: 'Erreur',
+    //     message: 'Le produit existe déjà',
+    //     buttons: [
+    //       { text: 'Valider'}
+    //     ]
+    //   });
+    //   alert.present();
+    // }
+    console.log(this.newItem);
+    this.items_complete.push(this.newItem);
+  }
+
+  findProductName(item) {
+    return item.product_name.toLocaleLowerCase() === this;
+  }
+
+  ngOnInit(): void {
+    this.http.get("../../assets/data/csv_converti.json")
+      .subscribe(data => {
+        this.items = data;
+        this.items_complete = data;
+      })
   }
 
   openCloseCard() {
@@ -38,14 +65,6 @@ export class RecherchePage {
     this.additives_n = false;
     this.ingredients_from_palm_oil_n = false;
     this.ingredients_that_may_be_from_palm_oil_n = false;
-  }
-
-  ngOnInit(): void {
-    this.http.get("../../assets/data/csv_converti.json")
-      .subscribe(data => {
-        this.items = data;
-        this.items_complete = data;
-      })
   }
 
   itemTapped(event, item) {
