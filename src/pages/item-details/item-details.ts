@@ -23,10 +23,8 @@ export class ItemDetailsPage {
         {
           text: 'Valider',
           handler: () => {
-            this.navCtrl.push(RecherchePage, {
-              rmItem: {
-                "product_name": this.selectedItem.product_name
-              }
+            this.navCtrl.setRoot(RecherchePage, {
+              rmItem: this.selectedItem
             });
           }
         },
@@ -38,7 +36,7 @@ export class ItemDetailsPage {
   }
 
   boutonModifierPressed() {
-    this.navCtrl.push(ModifierProduitPage, {
+    this.navCtrl.setRoot(ModifierProduitPage, {
       item: this.selectedItem
     });
   }
