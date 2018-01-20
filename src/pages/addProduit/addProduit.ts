@@ -44,7 +44,7 @@ export class AddProduitPage {
   }
 
   addProd() {
-    this.navCtrl.push(RecherchePage, {
+    this.navCtrl.setRoot(RecherchePage, {
       item: {
         "code": this.code,
         "url": this.url,
