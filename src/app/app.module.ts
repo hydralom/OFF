@@ -7,7 +7,7 @@ import {AddProduitPage} from '../pages/addProduit/addProduit';
 import {RecherchePage} from '../pages/recherche/recherche';
 import {ItemDetailsPage} from '../pages/item-details/item-details';
 import {ModifierProduitPage} from "../pages/modifierProduit/modifierProduit";
-import {TabsPage} from '../pages/tabs/tabs';
+// import {TabsPage} from '../pages/tabs/tabs';
 import {StatsPage} from "../pages/stats/stats";
 
 import {StatusBar} from '@ionic-native/status-bar';
@@ -21,8 +21,8 @@ import { HttpClientModule } from "@angular/common/http";
     RecherchePage,
     ItemDetailsPage,
     AddProduitPage,
-    ModifierProduitPage,
-    TabsPage
+    ModifierProduitPage
+    // TabsPage
   ],
   imports: [
     BrowserModule,
@@ -36,8 +36,8 @@ import { HttpClientModule } from "@angular/common/http";
     AddProduitPage,
     RecherchePage,
     ItemDetailsPage,
-    ModifierProduitPage,
-    TabsPage
+    ModifierProduitPage
+    // TabsPage
   ],
   providers: [
     StatusBar,
@@ -45,5 +45,4 @@ import { HttpClientModule } from "@angular/common/http";
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
-export class AppModule {
-}
+export class AppModule { }

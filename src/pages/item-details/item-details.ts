@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {NavController, NavParams, AlertController} from 'ionic-angular';
 
 import {ModifierProduitPage} from "../modifierProduit/modifierProduit";
+import {RecherchePage} from "../recherche/recherche";
 
 @Component({
   selector: 'page-item-details',
@@ -11,7 +12,6 @@ export class ItemDetailsPage {
   selectedItem: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
-    // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
   }
 
@@ -23,7 +23,9 @@ export class ItemDetailsPage {
         {
           text: 'Valider',
           handler: () => {
-          //  rm le truc
+            this.navCtrl.setRoot(RecherchePage, {
+              rmItem: this.selectedItem
+            });
           }
         },
         {text: 'Annuler'}
@@ -33,8 +35,8 @@ export class ItemDetailsPage {
     alert.present();
   }
 
-  boutonModifierPressed(){
-    this.navCtrl.push(ModifierProduitPage, {
+  boutonModifierPressed() {
+    this.navCtrl.setRoot(ModifierProduitPage, {
       item: this.selectedItem
     });
   }
