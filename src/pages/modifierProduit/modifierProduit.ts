@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
+
 import {ItemDetailsPage} from "../item-details/item-details";
 import {RecherchePage} from "../recherche/recherche";
 
@@ -44,7 +45,7 @@ export class ModifierProduitPage {
   }
 
   retourDetail() {
-    this.navCtrl.popTo(ItemDetailsPage);
+    this.navCtrl.setRoot(RecherchePage);
   }
 
   addProd() {

@@ -29,9 +29,9 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
-      {title: 'Recherche', component: RecherchePage},
-      {title: 'Ajout Produit', component: AddProduitPage},
-      {title: 'Statistiques', component: StatsPage}
+      {title: 'Recherche', icon: 'search', component: RecherchePage},
+      {title: 'Ajout Produit', icon: 'restaurant', component: AddProduitPage},
+      {title: 'Statistiques', icon: 'analytics', component: StatsPage}
     ];
   }
 
