@@ -4,7 +4,7 @@ Lancer dans un invite de commande :
    
 ```bash
 npm install -g cordova ionic
-git clone git@github.com:xavier-alexiade/OFF.git
+git clone git@github.com:hydralom/OFF.git
 cd off
 ```
 ## Démarrer la simulation
